@@ -28,5 +28,3 @@ Hospedagem do site:
 José
 .
 .
-
-https://docs.google.com/document/d/1zAdqCMyh9gi8DReq-eHeo8QP-hadQV3YUIUa_V1xjU8/edit?usp=sharing
