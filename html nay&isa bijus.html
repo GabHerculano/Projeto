@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nay e Isa Bijuterias</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Página Inicial -->
+    <header>
+      <h1>Nay e Isa Bijus</h1>
+      <p>Aqui, sua autoestima brilha!</p>
+    </header>
+
+    <main>
+      <section id="sobre">
+        <h2>Quem Somos?</h2>
+        <p>
+          Somos apaixonadas por moda e acreditamos no poder dos acessórios.
+          Nossa loja online apresenta uma seleção de pulseiras exclusivas,
+          projetadas para trazer originalidade e elegância ao seu dia a dia.
+          Conheça nossas peças e deixe-se encantar!
+        </p>
+      </section>
+
+      <section id="historia">
+        <h2>Nossa História</h2>
+        <p>
+          Sempre sonhamos em ter nosso próprio negócio, mas o caminho não era
+          claro. Em meio a buscas e inspirações, surgiu a oportunidade de
+          revender pulseiras pela internet. Assim nasceu a Nay e Isa Bijuterias!
+          Nossa missão vai além de vender acessórios; queremos que cada pessoa
+          que use nossas peças se sinta confiante e autônoma. Acreditamos que
+          cada pulseira pode ser uma forma de expressão, um detalhe que
+          transforma looks e ilumina o dia. Estamos aqui para ajudar você a
+          brilhar, celebrando sua singularidade com estilo!
+        </p>
+      </section>
+
+      <section id="colecao">
+        <h2>Nossas Peças</h2>
+        <p>
+          Explore a nossa coleção de pulseiras, inspiradas nas tendências mais
+          atuais. Cada uma delas foi cuidadosamente selecionada para se encaixar
+          perfeitamente no seu estilo, seja para um evento especial ou para o
+          dia a dia.
+        </p>
+        <button onclick="window.location.href='compras.html'">
+          Ir para Compras
+        </button>
+      </section>
+
+      <section id="contato">
+        <h2>Fale Conosco</h2>
+        <p>
+          Estamos aqui para ajudar! Se tiver dúvidas sobre nossos produtos ou
+          precisar de assistência, entre em contato através do e-mail
+          <a href="mailto:nayeisabijus8@gmail.com">nayeisabijus8@gmail.com</a>.
+        </p>
+      </section>
+
+      <section id="newsletter">
+        <h2>Inscreva-se na nossa Newsletter!</h2>
+        <p>
+          Receba novidades, promoções exclusivas e dicas de estilo diretamente
+          no seu e-mail.
+        </p>
+        <form>
+          <input type="email" placeholder="Digite seu e-mail" required />
+          <button type="submit">Inscrever</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Nay e Isa Bijuterias</p>
+    </footer>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compras - Nay e Isa Bijuterias</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Cabeçalho da Página -->
+    <header>
+      <h1>Compras</h1>
+      <p>Explore nossas pulseiras e adicione ao seu carrinho!</p>
+    </header>
+
+    <!-- Lista de Produtos -->
+    <main>
+      <section id="produtos">
+        <div class="produto">
+          <h2>Pulseira de Pérolas</h2>
+          <p>R$ 15,00</p>
+          <button onclick="adicionarAoCarrinho('Pulseira de Pérolas', 15)">
+            Adicionar ao Carrinho
+          </button>
+        </div>
+        <div class="produto">
+          <h2>Pulseira de Cristais</h2>
+          <p>R$ 15,00</p>
+          <button onclick="adicionarAoCarrinho('Pulseira de Cristais', 15)">
+            Adicionar ao Carrinho
+          </button>
+        </div>
+        <!-- Adicione mais produtos aqui conforme necessário -->
+      </section>
+
+      <!-- Carrinho de Compras -->
+      <section id="carrinho">
+        <h2>Seu Carrinho</h2>
+        <ul id="listaCarrinho"></ul>
+        <p id="total">Total: R$ 0,00</p>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+      </section>
+    </main>
+
+    <!-- Pagamento -->
+    <div id="pagamento" style="display: none">
+      <h2>Pagamento</h2>
+      <p>Escolha a forma de pagamento:</p>
+      <button onclick="pagarPix()">Pagar com Pix</button>
+      <button onclick="pagarCartao()">Pagar com Cartão de Crédito</button>
+    </div>
+
+    <!-- Modal de Pix -->
+    <div id="pixModal" style="display: none">
+      <h3>Pagamento via Pix</h3>
+      <p>Chave Pix: 11 97288-1933</p>
+      <button onclick="fecharModal()">Fechar</button>
+    </div>
+
+    <!-- Modal de Cartão de Crédito -->
+    <div id="cartaoModal" style="display: none">
+      <h3>Pagamento com Cartão de Crédito</h3>
+      <form>
+        <label for="numero">Número do Cartão:</label>
+        <input type="text" id="numero" required /><br />
+        <label for="validade">Validade:</label>
+        <input type="text" id="validade" required /><br />
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" required /><br />
+        <button type="submit">Pagar</button>
+      </form>
+      <button onclick="fecharModal()">Fechar</button>
+    </div>
+  </body>
+</html>
+
+<!-- Contato -->
+<section id="contato">
+  <h2>Fale Conosco</h2>
+  <p>
+    Estamos aqui para ajudar! Se tiver dúvidas sobre nossos produtos ou precisar
+    de assistência, entre em contato através do e-mail
+    <a href="mailto:nayeisabijus8@gmail.com">nayeisabijus8@gmail.com</a>.
+  </p>
+</section>
+
+<!-- Avaliação do Produto -->
+<section id="avaliacao">
+  <h2>Avalie o Produto</h2>
+  <p>
+    Gostou do nosso produto? Avalie abaixo de 0 a 10 e nos diga como podemos
+    melhorar:
+  </p>
+  <form>
+    <label for="nota">Nota (0 a 10):</label>
+    <input
+      type="number"
+      id="nota"
+      name="nota"
+      min="0"
+      max="10"
+      required
+    /><br />
+    <label for="comentario">Comentário:</label><br />
+    <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea
+    ><br />
+    <button type="submit">Enviar Avaliação</button>
+  </form>
+</section>
+
+<!-- Atendimento -->
+<section id="atendimento">
+  <h2>Atendimento ao Cliente</h2>
+  <p>
+    Se você tiver qualquer problema ou dúvida com sua compra, estamos aqui para
+    ajudar! Nossos canais de atendimento são rápidos e eficazes.
+  </p>
+  <ul>
+    <li>
+      Atendimento via e-mail:
+      <a href="mailto:nayeisabijus8@gmail.com">nayeisabijus8@gmail.com</a>
+    </li>
+    <li>Telefone para contato: (11) 97288-1933</li>
+  </ul>
+      
+</section>
