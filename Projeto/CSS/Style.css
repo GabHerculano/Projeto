@@ -1,0 +1,106 @@
+/* Fontes */
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Gwendolyn:wght@400;700&family=Rubik+Wet+Paint&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Rubik+Wet+Paint&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* LOGO */
+header {
+  color: #dbdff0;
+}
+
+/* Alinha em colunas */
+.Conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* HEADER */
+header div img {
+  width: 15rem;
+}
+
+header div {
+  background-color: #0c0c0c;
+}
+
+header div h1 {
+  font-family: "Gwendolyn", cursive;
+  font-weight: 400;
+  font-size: 6rem;
+  font-style: normal;
+}
+header div p {
+  font-weight: 400;
+  font-family: "Cabin", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+}
+/* NAV E LIST */
+.TopoPag {
+  list-style: none;
+  display: flex;
+}
+
+.TopoPag li + li {
+  margin-left: 20px;
+}
+
+header a {
+  color: #dbdff0;
+  text-decoration: none;
+  transition: color 8ms;
+}
+
+a:hover {
+  color: #c670d1;
+}
+/* MAIN */
+
+main {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-weight: 400;
+  font-family: "Cabin", sans-serif;
+  font-size: 20px;
+  background-color: #f9d9ef;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+/* INPUTS / BOTOES */
+button, input {
+  border-radius: 5px;
+  border: 2px solid #d5b6e5;
+  padding: 5px;
+  font-family: "Cabin", sans-serif;
+  outline: none;
+}
+input{
+    width: 45%;
+}
+button{
+    cursor: pointer;
+    background-color: #d5b6e5;
+}
+
+
+
+/* FOOTER */
+FOOTER {
+  padding: 2rem;
+  text-align: center;
+  background-color: #0c0c0c;
+  color: #dbdff0;
+}
