@@ -61,6 +61,65 @@
         }, 1000);
       });
     </script>
+
+    <!-- Carrosel -->
+    <style>
+      /* Estilo do carrossel */
+      .carrossel {
+        width: 300px;
+        overflow: hidden;
+        margin: 50px auto;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .imagens {
+        display: flex;
+        width: 400px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .imagem {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      /* Estilos das setas */
+      .seta {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        z-index: 10; /* Garante que as setas fiquem visíveis sobre as imagens */
+      }
+
+      .seta-esquerda {
+        left: 10px;
+      }
+
+      .seta-direita {
+        right: 10px;
+      }
+
+      /* Efeito de hover para as setas */
+      .seta:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: scale(1.2);
+      }
+
+      .seta:active {
+        transform: scale(1);
+      }
+    </style>
   </head>
 
   <body>
@@ -83,12 +142,54 @@
     </header>
 
     <main>
-      <section>
-        <h2>Confira nossos Produtos</h2>
-      </section>
+      <h2 class="H2prod">Confira nossos Produtos</h2>
+      <div class="carrossel">
+        <div class="seta seta-esquerda" onclick="mudarImagem('esquerda')">
+          &#8592;
+        </div>
+        <div class="seta seta-direita" onclick="mudarImagem('direita')">
+          &#8594;
+        </div>
+
+        <div class="imagens">
+          <img src="Imagens/Pan.Dourado-Branco.jpeg" class="imagem" />
+          <img src="Imagens/Pan.Prata-Nude.jpeg" class="imagem" id="dourada" />
+          <img src="Imagens/Pan.Rose-Rose.jpeg" class="imagem" />
+          <img src="Imagens/Pan.Prata-Preta.jpeg" class="imagem" />
+          <img src="Imagens/Pan.Rose-Rosa.jpeg" class="imagem" />
+        </div>
+      </div>
+
+      <script>
+        let indiceAtual = 0;
+        const imagens = document.querySelectorAll(".imagem");
+        const totalImagens = imagens.length;
+
+        function mudarImagem(direcao) {
+          // Calcula a largura atual da imagem
+          const larguraImagem = imagens[0].clientWidth;
+
+          if (direcao === "esquerda") {
+            indiceAtual =
+              indiceAtual === 0 ? totalImagens - 1 : indiceAtual - 1;
+          } else if (direcao === "direita") {
+            indiceAtual =
+              indiceAtual === totalImagens - 1 ? 0 : indiceAtual + 1;
+          }
+
+          // Usa a largura dinâmica da imagem para definir a posição
+          const novoTransform = -indiceAtual * larguraImagem;
+          document.querySelector(
+            ".imagens"
+          ).style.transform = `translateX(${novoTransform}px)`;
+        }
+      </script>
     </main>
     <footer>
       <p>&copy 2024 Nay e Isa Bijuterias</p>
+      <br />
+      <p>nayeisabijus8@gmail.com</p>
+      <p>55 (11) 97288-1933</p>
     </footer>
   </body>
 </html>

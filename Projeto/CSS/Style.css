@@ -79,23 +79,24 @@ section {
   flex-direction: column;
   gap: 2rem;
 }
+
 /* INPUTS / BOTOES */
-button, input {
+button,
+input {
   border-radius: 5px;
   border: 2px solid #d5b6e5;
   padding: 5px;
   font-family: "Cabin", sans-serif;
   outline: none;
 }
-input{
-    width: 45%;
-}
-button{
-    cursor: pointer;
-    background-color: #d5b6e5;
-}
 
-
+input {
+  width: 45%;
+}
+button {
+  cursor: pointer;
+  background-color: #d5b6e5;
+}
 
 /* FOOTER */
 FOOTER {
@@ -103,4 +104,9 @@ FOOTER {
   text-align: center;
   background-color: #0c0c0c;
   color: #dbdff0;
+}
+
+.H2prod{
+text-align: center;
+padding-top: 4rem;
 }
