@@ -1,3 +1,10 @@
+**Linguagens utilizadas**
+
+  - Html;
+  - CSS;
+  - JavaScript
+
+
 **Arquivos**
 
   - home.html;
