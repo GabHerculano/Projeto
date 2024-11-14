@@ -17,42 +17,51 @@ header {
 /* Alinha em colunas */
 .Conteiner {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap; /* Permitir quebra de linha para elementos */
 }
-
 /* HEADER */
 header div img {
   width: 15rem;
+  max-width: 100%; /* Limitar largura máxima para dispositivos menores */
+  height: auto;
 }
 
 header div {
   background-color: #0c0c0c;
+  padding: 10px;
+  flex: 1;
 }
 
+/* Título e Parágrafo */
 header div h1 {
   font-family: "Gwendolyn", cursive;
   font-weight: 400;
-  font-size: 6rem;
-  font-style: normal;
+  font-size: 4rem; /* Reduzido para melhor visualização em telas menores */
 }
+
 header div p {
   font-weight: 400;
   font-family: "Cabin", sans-serif;
-  font-size: 20px;
+  font-size: 1rem; /* Tamanho ajustado para mobile */
   font-style: italic;
 }
+
 /* NAV E LIST */
+/* Menu */
 .TopoPag {
-  list-style: none;
   display: flex;
+  gap: 20px;
 }
 
-.TopoPag li + li {
-  margin-left: 20px;
+.TopoPag li {
+  list-style: none;
 }
 
-header a {
+.TopoPag a {
   color: #dbdff0;
   text-decoration: none;
   transition: color 8ms;
@@ -61,6 +70,32 @@ header a {
 a:hover {
   color: #c670d1;
 }
+
+/* Media Query para dispositivos móveis */
+@media (max-width: 600px) {
+  .Conteiner {
+    flex-direction: column; /* Mudar para coluna em telas menores */
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Ajuste da imagem do logo */
+  header div img {
+    width: 10rem; /* Diminuir o tamanho do logo em telas pequenas */
+  }
+
+  /* Ajuste do título */
+  header div h1 {
+    font-size: 2.5rem; /* Reduzir tamanho do título */
+  }
+
+  /* Ajuste do menu */
+  .TopoPag {
+    flex-direction: column; /* Menu em coluna para melhor visualização */
+    gap: 10px;
+  }
+}
+
 /* MAIN */
 
 main {
@@ -106,7 +141,7 @@ FOOTER {
   color: #dbdff0;
 }
 
-.H2prod{
-text-align: center;
-padding-top: 4rem;
+.H2prod {
+  text-align: center;
+  padding-top: 4rem;
 }
